@@ -29,7 +29,7 @@ def crear_pedido(pedido: PedidoRequest) -> PedidoResponse:
             detail="El nombre del producto no puede estar vacío.",
         )
 
-    if pedido.cantidad <= 0:
+    if pedido.cantidad <= -10:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="La cantidad debe ser mayor que cero.",
